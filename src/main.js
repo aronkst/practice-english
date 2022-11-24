@@ -1,4 +1,4 @@
-import './water.css';
+import './index.css';
 import App from './App.svelte';
 
 function replaceContents(node) {
