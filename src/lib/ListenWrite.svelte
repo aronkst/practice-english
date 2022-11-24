@@ -56,10 +56,3 @@
 	<h2>{sentence}</h2>
 	<code>{similarity}%</code>
 {/if}
-
-<style>
-	code {
-		display: inline-block;
-		margin-top: 12px;
-	}
-</style>

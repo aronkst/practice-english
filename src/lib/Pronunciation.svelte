@@ -87,10 +87,3 @@
 {#if similarity >= 0}
 	<code>{similarity}%</code>
 {/if}
-
-<style>
-	code {
-		display: inline-block;
-		margin-top: 12px;
-	}
-</style>
