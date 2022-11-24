@@ -2,16 +2,12 @@
 	import sentences from '../helper/sentences';
 	import stringSimilarity from 'string-similarity';
 
-	const speech = new SpeechSynthesisUtterance();
-	speech.lang = 'en-US';
+	export let speech;
 	speech.onend = () => {
 		disableButtons = false;
 	};
 
-	const speechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-	const recognition = new speechRecognition();
-	recognition.lang = 'en-US';
-	recognition.continuous = true;
+	export let recognition;
 	recognition.onresult = (event) => {
 		talked = event.results[0][0].transcript.toLowerCase();
 		checkSpeak();
@@ -69,41 +65,16 @@
 		);
 	}
 
-	document.addEventListener(
-		'keyup',
-		(event) => {
-			let name = event.key;
-			if (name === '1') {
-				if (disableButtons === false) {
-					randomSentence();
-				}
-			}
-			if (name === '2') {
-				if (disableButtons === false) {
-					listenSentence();
-				}
-			}
-			if (name === '3') {
-				if (showStopSpeak) {
-					stopSpeakWord();
-				} else {
-					speakWord();
-				}
-			}
-		},
-		false
-	);
-
 	randomSentence();
 </script>
 
 <div>
-	<button on:click={randomSentence} disabled={disableButtons}> [1] New Sentence </button>
-	<button on:click={listenSentence} disabled={disableButtons}> [2] Listen </button>
+	<button on:click={randomSentence} disabled={disableButtons}>New Sentence</button>
+	<button on:click={listenSentence} disabled={disableButtons}>Listen</button>
 	{#if showStopSpeak}
-		<button on:click={stopSpeakWord}> [3] Stop </button>
+		<button on:click={stopSpeakWord}>Stop</button>
 	{:else}
-		<button on:click={speakWord} disabled={disableButtons}> [3] Speak </button>
+		<button on:click={speakWord} disabled={disableButtons}>Speak</button>
 	{/if}
 </div>
 
