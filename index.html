@@ -9,22 +9,24 @@
 		<link rel="manifest" href="/manifest.json" />
 	</head>
 	<body>
-		<header>
-			<h1>Practice English</h1>
-			<p>
-				Practice English is an ad-free and analytics-free web application, and completely
-				<a href="https://github.com/aronkst/english-pronunciation" target="_blank" rel="noreferrer"
-					>open source</a
-				>.
-			</p>
-			<p>(Use Google Chrome)</p>
-		</header>
-		<main>
-			<div id="app">
-				<p>Loading ...</p>
-				<p>Either enable JavaScript or an error has occurred</p>
-			</div>
-		</main>
+		<div class="container mx-auto px-2">
+			<header class="mt-2">
+				<h1 class="text-3xl mb-2">Practice English</h1>
+				<p class="text-base">
+					Practice English is an ad-free and analytics-free web application, and completely
+					<a href="https://github.com/aronkst/english-pronunciation" target="_blank" rel="noreferrer"
+						>open source</a
+					>.
+				</p>
+				<p class="text-base mt-2">(Use Google Chrome).</p>
+			</header>
+			<main>
+				<div id="app">
+					<p class="text-base">Loading ...</p>
+					<p class="text-base">Either enable JavaScript or an error has occurred</p>
+				</div>
+			</main>
+		</div>
 		<script type="module" src="/src/main.js"></script>
 	</body>
 </html>
