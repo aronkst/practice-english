@@ -15,8 +15,8 @@
 	}
 </script>
 
-<div>
-	<button on:click={listenText} disabled={disableButtons}>Listen</button>
+<div class="mb-5">
+	<button class="btn btn-block mb-2" on:click={listenText} disabled={disableButtons}>Listen</button>
 </div>
 
-<textarea rows="10" cols="40" bind:value={text} />
+<textarea class="textarea textarea-secondary w-full" rows="5" bind:value={text} />
