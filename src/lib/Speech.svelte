@@ -25,14 +25,14 @@
 	}
 </script>
 
-<div>
+<div class="mb-5">
 	{#if showStopSpeak}
-		<button on:click={stopSpeakFree}>Stop</button>
+		<button class="btn btn-block mb-2" on:click={stopSpeakFree}>Stop</button>
 	{:else}
-		<button on:click={speakFree} disabled={disableButtons}>Speak</button>
+		<button class="btn btn-block mb-2" on:click={speakFree} disabled={disableButtons}>Speak</button>
 	{/if}
 </div>
 
 {#if talked !== ''}
-	<h2>{talked}</h2>
+	<h2 class="text-lg">{talked}</h2>
 {/if}
