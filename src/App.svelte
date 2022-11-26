@@ -60,28 +60,30 @@
 	<div class="navbar-end" />
 </div>
 
-<div class="p-4">
-	{#if [0, 1, 2, 3, 4].includes(show)}
-		{#if show === 0}
-			<Pronunciation {speech} {recognition} />
+<main class="container mx-auto">
+	<div class="p-4">
+		{#if [0, 1, 2, 3, 4].includes(show)}
+			{#if show === 0}
+				<Pronunciation {speech} {recognition} />
+			{/if}
+	
+			{#if show === 1}
+				<ListenWrite {speech} />
+			{/if}
+	
+			{#if show === 2}
+				<Listen {speech} />
+			{/if}
+	
+			{#if show === 3}
+				<Speech {recognition} />
+			{/if}
+	
+			{#if show === 4}
+				<ListenSpeech {speech} {recognition} />
+			{/if}
+		{:else}
+			<About />
 		{/if}
-
-		{#if show === 1}
-			<ListenWrite {speech} />
-		{/if}
-
-		{#if show === 2}
-			<Listen {speech} />
-		{/if}
-
-		{#if show === 3}
-			<Speech {recognition} />
-		{/if}
-
-		{#if show === 4}
-			<ListenSpeech {speech} {recognition} />
-		{/if}
-	{:else}
-		<About />
-	{/if}
-</div>
+	</div>
+</main>
