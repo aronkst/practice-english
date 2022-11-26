@@ -49,21 +49,22 @@
 	}
 </script>
 
-<div>
-	<button on:click={listenText} disabled={disableButtons}>Listen</button>
+<div class="mb-5">
+	<button class="btn btn-block mb-2" on:click={listenText} disabled={disableButtons}>Listen</button>
 	{#if showStopSpeak}
-		<button on:click={stopSpeakText}>Stop</button>
+		<button class="btn btn-block mb-2" on:click={stopSpeakText}>Stop</button>
 	{:else}
-		<button on:click={speakText} disabled={disableButtons}>Speak</button>
+		<button class="btn btn-block mb-2" on:click={speakText} disabled={disableButtons}>Speak</button>
 	{/if}
 </div>
 
-<textarea rows="10" cols="40" bind:value={text} />
+<textarea class="textarea textarea-secondary w-full mb-2" rows="5" bind:value={text} />
 
 {#if talked !== ''}
-	<h2>{talked}</h2>
+	<h2 class="text-lg">{talked}</h2>
 {/if}
 
 {#if similarity >= 0}
-	<code>{similarity}%</code>
+	<progress class="mt-2 progress progress-primary" value={similarity} max="100" />
+	<p class="text-base text-primary font-bold text-center">{similarity}%</p>
 {/if}
