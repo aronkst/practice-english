@@ -68,15 +68,17 @@
 	randomSentence();
 </script>
 
-<p class="text-sm mb-5">Description Description Description Description Description Description Description Description</p>
-
 <div class="mb-5">
-	<button class="btn" on:click={randomSentence} disabled={disableButtons}>New Sentence</button>
-	<button class="btn" on:click={listenSentence} disabled={disableButtons}>Listen</button>
+	<button class="btn btn-block mb-2" on:click={randomSentence} disabled={disableButtons}
+		>New Sentence</button
+	>
+	<button class="btn btn-block mb-2" on:click={listenSentence} disabled={disableButtons}
+		>Listen</button
+	>
 	{#if showStopSpeak}
-		<button class="btn" on:click={stopSpeakWord}>Stop</button>
+		<button class="btn btn-block mb-2" on:click={stopSpeakWord}>Stop</button>
 	{:else}
-		<button class="btn" on:click={speakWord} disabled={disableButtons}>Speak</button>
+		<button class="btn btn-block mb-2" on:click={speakWord} disabled={disableButtons}>Speak</button>
 	{/if}
 </div>
 
@@ -87,6 +89,6 @@
 {/if}
 
 {#if similarity >= 0}
-	<progress class="mt-2 progress progress-primary" value={similarity} max="100"></progress>
+	<progress class="mt-2 progress progress-primary" value={similarity} max="100" />
 	<p class="text-base text-primary font-bold text-center">{similarity}%</p>
 {/if}
