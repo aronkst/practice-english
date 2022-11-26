@@ -45,8 +45,12 @@
 </script>
 
 <div class="mb-5">
-	<button class="btn btn-block mb-2" on:click={randomSentence} disabled={disableButtons}>New Sentence</button>
-	<button class="btn btn-block mb-2" on:click={listenSentence} disabled={disableButtons}>Listen</button>
+	<button class="btn btn-block mb-2" on:click={randomSentence} disabled={disableButtons}
+		>New Sentence</button
+	>
+	<button class="btn btn-block mb-2" on:click={listenSentence} disabled={disableButtons}
+		>Listen</button
+	>
 	<button class="btn btn-block mb-2" on:click={checkTyped} disabled={disableButtons}>Check</button>
 </div>
 

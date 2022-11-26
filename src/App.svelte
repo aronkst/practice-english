@@ -66,19 +66,19 @@
 			{#if show === 0}
 				<Pronunciation {speech} {recognition} />
 			{/if}
-	
+
 			{#if show === 1}
 				<ListenWrite {speech} />
 			{/if}
-	
+
 			{#if show === 2}
 				<Listen {speech} />
 			{/if}
-	
+
 			{#if show === 3}
 				<Speech {recognition} />
 			{/if}
-	
+
 			{#if show === 4}
 				<ListenSpeech {speech} {recognition} />
 			{/if}
