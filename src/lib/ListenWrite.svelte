@@ -44,15 +44,16 @@
 	randomSentence();
 </script>
 
-<div>
-	<button on:click={randomSentence} disabled={disableButtons}>New Sentence</button>
-	<button on:click={listenSentence} disabled={disableButtons}>Listen</button>
-	<button on:click={checkTyped} disabled={disableButtons}>Check</button>
+<div class="mb-5">
+	<button class="btn btn-block mb-2" on:click={randomSentence} disabled={disableButtons}>New Sentence</button>
+	<button class="btn btn-block mb-2" on:click={listenSentence} disabled={disableButtons}>Listen</button>
+	<button class="btn btn-block mb-2" on:click={checkTyped} disabled={disableButtons}>Check</button>
 </div>
 
-<textarea rows="10" cols="40" bind:value={typed} />
+<textarea class="textarea textarea-secondary w-full mb-2" rows="5" bind:value={typed} />
 
 {#if similarity >= 0}
-	<h2>{sentence}</h2>
-	<code>{similarity}%</code>
+	<h2 class="text-xl mb-2">{sentence}</h2>
+	<progress class="mt-2 progress progress-primary" value={similarity} max="100" />
+	<p class="text-base text-primary font-bold text-center">{similarity}%</p>
 {/if}
